@@ -1,0 +1,24 @@
+</style><script>function searchProducts() {
+    const searchQuery = document.getElementById('search-bar').value.toLowerCase();
+    const products = document.querySelectorAll('.product-item');
+
+    products.forEach(product => {
+        const productName = product.getAttribute('data-name').toLowerCase();
+        
+        if (productName.includes(searchQuery)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+}
+
+// Exibe o botão de compra quando o produto for clicado
+const products = document.querySelectorAll('.product-item');
+
+products.forEach(product => {
+    product.addEventListener('click', () => {
+        product.classList.toggle('active');
+    });
+});
+</script>
